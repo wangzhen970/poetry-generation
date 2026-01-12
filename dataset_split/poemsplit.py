@@ -304,7 +304,7 @@ def main():
         pool = poems_by_type[ptype]
         n_needed = 10000    # 控制输出多少条数据
         if len(pool) < n_needed:
-            print(f"⚠️  警告：{ptype} 只有 {len(pool)} 条，少于 250 条")
+            print(f"⚠️  警告：{ptype} 只有 {len(pool)} 条，少于{n_needed}条")
             sampled.extend(pool)
         else:
             sampled.extend(random.sample(pool, n_needed))

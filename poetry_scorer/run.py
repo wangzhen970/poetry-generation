@@ -41,14 +41,14 @@ def main():
     extract_parser = subparsers.add_parser('extract', help='提取优质诗词数据')
     extract_parser.add_argument('input_file', help='输入JSON/JSONL文件路径')
     extract_parser.add_argument('output_file', help='输出文件路径')
-    extract_parser.add_argument('--poem-field', default='prediction', help='诗句字段名 (默认: prediction)')
+    extract_parser.add_argument('--poem-field', default='content', help='诗句字段名 (默认: content)')
     extract_parser.add_argument('--instruct-field', default='instruct', help='指令字段名 (默认: instruct)')
-    extract_parser.add_argument('--keep-fields', nargs='+', default=['prediction', 'instruct'],
+    extract_parser.add_argument('--keep-fields', nargs='+', default=['instruct', 'title', 'content', 'dynasty', 'author' ],
                                 help='需要保留到输出文件的字段列表')
-    extract_parser.add_argument('--max-five-quatrain', type=int, default=100, help='五言绝句最大输出数量 (默认: 100)')
-    extract_parser.add_argument('--max-seven-quatrain', type=int, default=100, help='七言绝句最大输出数量 (默认: 100)')
-    extract_parser.add_argument('--max-five-regulated', type=int, default=50, help='五言律诗最大输出数量 (默认: 50)')
-    extract_parser.add_argument('--max-seven-regulated', type=int, default=50, help='七言律诗最大输出数量 (默认: 50)')
+    extract_parser.add_argument('--max-five-quatrain', type=int, default=1000, help='五言绝句最大输出数量 (默认: 1000)')
+    extract_parser.add_argument('--max-seven-quatrain', type=int, default=1000, help='七言绝句最大输出数量 (默认: 1000)')
+    extract_parser.add_argument('--max-five-regulated', type=int, default=1000, help='五言律诗最大输出数量 (默认: 1000)')
+    extract_parser.add_argument('--max-seven-regulated', type=int, default=1000, help='七言律诗最大输出数量 (默认: 1000)')
     extract_parser.add_argument('--is-jsonl', action='store_true', help='输入文件为JSONL格式')
     extract_parser.add_argument('--rhyme-system', default='pingshui', choices=['pingshui', 'xin', 'tong'],
                                 help='韵书系统选择 (默认: pingshui)')

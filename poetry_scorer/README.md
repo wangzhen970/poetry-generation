@@ -114,7 +114,10 @@ python run.py test
 python run.py score input.jsonl --rhyme-system pingshui --save-summary true
 
 # 提取优质诗词
-python run.py extract input.jsonl output.jsonl --max-five-quatrain 100
+python poetry_scorer/run.py extract \
+  ./data/raw/split_12540.jsonl \
+  ./data/output/chinesepoem_4000.json \
+  --is-jsonl
 ```
 
 ### 直接使用主脚本
